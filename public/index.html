@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CEMPPSA · Modelo 3D</title>
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Import map desde CDN (blindado) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.159.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="hud">
+    <div class="brand">CEMPPSA · Modelo 3D</div>
+    <div class="controls">
+      <button id="btn-autorotate" class="btn">Auto-Rotate: <span id="lab-autorotate">ON</span></button>
+      <button id="btn-wire" class="btn">Wireframe: <span id="lab-wire">OFF</span></button>
+      <button id="btn-reset" class="btn">Reset</button>
+    </div>
+  </header>
+
+  <div id="three-root"></div>
+
+
+
+<!-- Modal -->
+  <div id="info-modal" class="modal hidden">
+    <div class="modal__backdrop" data-close="1"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="info-title">
+      <div class="modal__header">
+        <h3 id="info-title">Instrumento</h3>
+        <button id="modal-close" class="modal__close" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal__body">
+        <div class="kv"><span>Tipo</span><strong id="info-kind">—</strong></div>
+        <div class="kv"><span>Estado</span><strong id="info-status">—</strong></div>
+        <div class="kv"><span>Último envío</span><strong id="info-last">—</strong></div>
+        <div class="kv"><span>Ubicación</span><strong id="info-pos">—</strong></div>
+        <div class="kv"><span>Detalle</span><strong id="info-note">—</strong></div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn" id="btn-ver-historico">Ver histórico</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="foot">Demo 3D · Presa + montaña · Three.js (sin modelos externos)</footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
